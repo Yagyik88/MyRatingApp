@@ -2,7 +2,7 @@
 _A Full-Stack Web Application for Rating & Managing Local Stores_
 
 <p align="center">
-  <img src="./ScreenShot/Screenshot_2025-11-22_014905.png" width="900" />
+  <img src="./ScreenShot/Screenshot 2025-11-22 014905.png" width="900" />
 </p>
 
 <p align="center">
@@ -118,14 +118,14 @@ This application was built as part of a **full-stack coding challenge**.
 
 ### 🔐 Login Page
 <p align="center">
-  <img src="./ScreenShot/Screenshot_2025-11-22_014925.png" width="900" />
+  <img src="./ScreenShot/Screenshot 2025-11-22 014925.png" width="900" />
 </p>
 
 ---
 
 ### 📊 Admin Dashboard
 <p align="center">
-  <img src="./ScreenShot/Screenshot_2025-11-22_014950.png" width="900" />
+  <img src="./ScreenShot/Screenshot 2025-11-22 014950.png" width="900" />
 </p>
 
 ---
