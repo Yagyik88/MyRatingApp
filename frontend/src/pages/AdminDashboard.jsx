@@ -11,6 +11,7 @@ export default function AdminDashboard() {
 
 
   // Redirect if wrong role
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const role = localStorage.getItem("role");
     if (role !== "admin") {
@@ -19,6 +20,7 @@ export default function AdminDashboard() {
     }
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const token = localStorage.getItem("token");
 

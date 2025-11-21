@@ -9,6 +9,7 @@ export default function AdminUserDetailsPage() {
   const API = process.env.REACT_APP_API_URL;
 
   // ADMIN ONLY CHECK
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const role = localStorage.getItem("role");
     if (role !== "admin") navigate("/login");
@@ -16,6 +17,7 @@ export default function AdminUserDetailsPage() {
   }, []);
 
   // LOAD USER DETAILS
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const token = localStorage.getItem("token");
 

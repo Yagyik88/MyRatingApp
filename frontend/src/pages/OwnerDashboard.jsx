@@ -9,6 +9,7 @@ export default function OwnerDashboard() {
   const API = process.env.REACT_APP_API_URL;
 
   // Check if user is store owner
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const role = localStorage.getItem("role");
     if (role !== "store_owner") {
@@ -17,7 +18,7 @@ export default function OwnerDashboard() {
     }
     // eslint-disable-next-line
   }, []);
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const token = localStorage.getItem("token");
 

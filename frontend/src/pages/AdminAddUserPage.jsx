@@ -12,7 +12,7 @@ export default function AdminAddUserPage() {
   });
 
   const [msg, setMsg] = useState("");
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
   const API = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
