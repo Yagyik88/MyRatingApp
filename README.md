@@ -111,7 +111,7 @@ This application was built as part of a **full-stack coding challenge**.
 
 ### 🏠 Landing Page
 <p align="center">
-  <img src="./ScreenShot/Screenshot_2025-11-22_014905.png" width="900" />
+  <img src="./ScreenShot/Screenshot 2025-11-22 014905.png" width="900" />
 </p>
 
 ---
