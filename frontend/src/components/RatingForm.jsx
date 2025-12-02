@@ -9,34 +9,40 @@ export default function RatingForm({ storeId, userRating, onDone }) {
   const API = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!rating || rating < 1 || rating > 5) {
-      setMessage("Please select a rating");
-      return;
-    }
+  if (!rating || rating < 1 || rating > 5) {
+    setMessage("Please select a rating");
+    return;
+  }
 
-    const token = localStorage.getItem("token");
-    setIsSubmitting(true);
-    setMessage("");
+  const token = localStorage.getItem("token");
+  setIsSubmitting(true);
+  setMessage("");
 
-    try {
-      await axios.post(
-        `${API}/ratings`,
-        { storeId, rating },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+  try {
+    await axios.post(
+      `${API}/ratings`,
+      { storeId, rating },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
 
-      setMessage("Rating submitted successfully!");
-      setTimeout(() => {
-        setMessage("");
-        if (onDone) onDone();
-      }, 1500);
-    } catch (err) {
-      setMessage("Failed to submit rating");
-      setIsSubmitting(false);
-    }
-  };
+    setMessage("Rating submitted successfully!");
+
+setTimeout(() => {
+  setMessage("");
+  if (onDone) setTimeout(onDone, 300);  // FIX
+}, 1000);
+
+
+  } catch (err) {
+    setMessage("Failed to submit rating");
+  } finally {
+    // 🔥 FIX: This stops the loading spinner
+    setIsSubmitting(false);
+  }
+};
+
 
   const handleStarClick = (value) => {
     setRating(value);

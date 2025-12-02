@@ -1,0 +1,45 @@
+# version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: rating_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: rating_app
+    ports:
+      - "5432:5432"
+    volumes:
+      # IMPORTANT — db-init must come FIRST!
+      - ./backend/db-init:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: rating_backend
+    restart: always
+    environment:
+      PG_USER: postgres
+      PG_HOST: postgres
+      PG_DB: rating_app
+      PG_PASSWORD: root
+      PG_PORT: 5432
+      PORT: 5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    container_name: rating_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

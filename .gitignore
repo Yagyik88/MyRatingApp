@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Build outputs
+frontend/build/
+backend/dist/
+dist/
+build/
+
+# Env files
+backend/.env
+frontend/.env
+
+# Logs
+*.log
+logs/
+
+# Docker ignore
+*.pid

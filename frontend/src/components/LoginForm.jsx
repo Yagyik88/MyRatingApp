@@ -206,13 +206,13 @@ export default function LoginForm() {
         </div>
         <div className="demo-list">
           <div className="demo-item">
-            <strong>Admin:</strong> admin@test.com
+            <strong>Admin:</strong> admin@example.com
           </div>
           <div className="demo-item">
-            <strong>Owner:</strong> owner@test.com
+            <strong>Owner:</strong> owner@example.com
           </div>
           <div className="demo-item">
-            <strong>User:</strong> user@test.com
+            <strong>User:</strong> user@example.com
           </div>
         </div>
       </div>

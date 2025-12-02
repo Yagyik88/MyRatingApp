@@ -20,16 +20,17 @@ export default function UserDashboard() {
     // eslint-disable-next-line
   }, []);
 
-  const loadStores = () => {
-    const token = localStorage.getItem("token");
+const loadStores = () => {
+  const token = localStorage.getItem("token");
 
-    axios
-      .get(`${API}/stores`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((res) => setStores(res.data))
-      .catch((err) => console.error(err));
-  };
+  axios
+    .get(`${API}/stores`, {
+      headers: { Authorization: `Bearer ${token}` },
+      cache: "no-store",
+    })
+    .then((res) => setStores([...res.data]))   // FIX
+    .catch((err) => console.error(err));
+};
 
   useEffect(() => {
     loadStores();
